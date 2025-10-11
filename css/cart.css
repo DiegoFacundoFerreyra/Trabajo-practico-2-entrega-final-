@@ -1,0 +1,45 @@
+#contenedor-carrito {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.tarjeta-producto {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: peru;
+  border-radius: 8px;
+  padding: 10px;
+  height: 150px;
+}
+
+.tarjeta-producto img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.tarjeta-producto h3 {
+  width: 130px;
+}
+
+.tarjeta-producto div {
+  background-color: peru;
+  margin: 8px;
+  padding: 4px;
+  border-radius: 4px;
+  gap: 12px;
+}
+
+#total {
+  text-align: center;
+}
+
+#carrito-vacio {
+  text-align: center;
+}

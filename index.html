@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Perfumes</title>
+  </head>
+  <body>
+   <header>
+  <nav>
+    <h1>Perfumería DF</h1>
+    <img
+      class="img-carrito"
+      src="./img/usuariocarrito/usuario.png"
+      alt="usuario"
+      title="Usuario"
+    />
+    <div class="buscador">
+      <input type="text" id="buscar" placeholder="Buscar tu perfume" />
+      <button id="btnBuscar">Buscar</button>
+    </div>
+
+    <a href="./html/cart.html">
+      <img
+        class="img-carrito"
+        src="./img/usuariocarrito/carrito.png"
+        alt="carrito de compras"
+        title="Carrito de compras"
+      />
+      <span id="contador-carrito">0</span>
+    </a>
+  </nav>
+</header>
+    <main>
+      <section id="productos-contenedor"><section/>
+    </main>
+    <footer>
+      <p>&copy; 2025 Tienda de Perfumes. Todos los derechos reservados.</p>
+      <p> Web creada por Diego Ferreyra</p>
+    </footer>
+    <script src="./js/perfumes.js"></script>
+    <script src="./js/cartservice.js" defer></script>
+    <script src="./js/main.js" defer></script>
+  </body>
+</html>
