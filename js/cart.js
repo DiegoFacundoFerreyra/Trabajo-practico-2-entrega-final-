@@ -64,10 +64,35 @@ function actualizarTotal() {
   }
 }
 
-document.getElementById("reiniciar").addEventListener("click", () => {
-  reiniciarCarrito();
-  crearTarjetas();
-  revisarMensajeVacio();
+//Reiniciar carrito con alerta de seguridad
+
+const btnReiniciar = document.getElementById("reiniciar");
+
+btnReiniciar.addEventListener("click", () => {
+  Swal.fire({
+    title: "¿Estás seguro?",
+    text: "Se eliminarán todos los productos del carrito.",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Sí, eliminar",
+    cancelButtonText: "Cancelar",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      reiniciarCarrito();
+      crearTarjetas();
+      revisarMensajeVacio();
+
+      Swal.fire({
+        title: "Carrito eliminado",
+        text: "Tu carrito fue vaciado correctamente.",
+        icon: "success",
+        timer: 2000,
+        showConfirmButton: false,
+      });
+    }
+  });
 });
 
 function revisarMensajeVacio() {
@@ -95,6 +120,12 @@ if (botonComprar) {
     precioElement.innerText = "0";
     revisarMensajeVacio();
 
-    alert("¡Gracias por tu compra! 🛍️");
+    //Alerta de GRACIAS
+    Swal.fire({
+      icon: "success",
+      title: "¡Gracias por tu compra! 🛍️",
+      text: "Tu pedido ha sido procesado correctamente.",
+      confirmButtonColor: "#28a745",
+    });
   });
 }

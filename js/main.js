@@ -1,6 +1,6 @@
 const contenedorTarjetas = document.getElementById("productos-contenedor");
 
-/** Crea las tarjetas de productos teniendo en cuenta la lista en perfunes.js */
+// Crea las tarjetas de productos teniendo en cuenta la lista en perfunes.js
 function crearTarjetas(productos) {
   productos.forEach((producto) => {
     const nuevoPerfume = document.createElement("div");
@@ -18,3 +18,38 @@ function crearTarjetas(productos) {
 }
 
 crearTarjetas(perfumes);
+
+//BUSCADOR DE PRODUCTOS
+document.addEventListener("DOMContentLoaded", () => {
+  const inputBuscar = document.getElementById("buscar");
+  const btnBuscar = document.getElementById("btnBuscar");
+  const productos = document.querySelectorAll(".tarjeta-producto");
+
+  //Funcino para filtrar productos
+  function filtrarProductos() {
+    const texto = inputBuscar.value.toLowerCase().trim();
+    productos.forEach((producto) => {
+      const nombre = producto.querySelector("h3").textContent.toLowerCase();
+
+      //Muestra solo los productos que coinciden
+      if (nombre.includes(texto)) {
+        producto.style.display = "block";
+      } else {
+        producto.style.display = "none";
+      }
+    });
+  }
+
+  //Evento al hacer click en el boton
+  btnBuscar.addEventListener("click", filtrarProductos);
+
+  //Tambien permite buscar con ENTER
+  inputBuscar.addEventListener("keyup", (e) => {
+    if (e.key === "Enter") {
+      filtrarProductos();
+    }
+  });
+
+  //Bucar en tiempo real
+  inputBuscar.addEventListener("input", filtrarProductos);
+});
