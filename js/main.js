@@ -1,4 +1,11 @@
+//MENU HAMBURGUIESA
+const toggleProductos = document.getElementById("toggle-productos");
 const contenedorTarjetas = document.getElementById("productos-contenedor");
+
+// Alternar visibilidad del catálogo al hacer clic en el título hamburguesa
+toggleProductos.addEventListener("click", () => {
+  contenedorTarjetas.classList.toggle("active");
+});
 
 // Crea las tarjetas de productos teniendo en cuenta la lista en perfunes.js
 function crearTarjetas(productos) {

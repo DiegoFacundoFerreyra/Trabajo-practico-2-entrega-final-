@@ -8,37 +8,40 @@
     <title>Perfumes</title>
   </head>
   <body>
-   <header>
-  <nav>
-    <h1>Perfumería DF</h1>
-    <img
-      class="img-carrito"
-      src="./img/usuariocarrito/usuario.png"
-      alt="usuario"
-      title="Usuario"
-    />
-    <div class="buscador">
-      <input type="text" id="buscar" placeholder="Buscar tu perfume" />
-      <button id="btnBuscar">Buscar</button>
-    </div>
+    <header>
+      <nav>
+        <h1>Perfumería DF</h1>
+        <img
+          class="img-carrito"
+          src="./img/usuariocarrito/usuario.png"
+          alt="usuario"
+          title="Usuario"
+        />
+        <div class="buscador">
+          <input type="text" id="buscar" placeholder="Buscar tu perfume" />
+          <button id="btnBuscar">Buscar</button>
+        </div>
 
-    <a href="./html/cart.html">
-      <img
-        class="img-carrito"
-        src="./img/usuariocarrito/carrito.png"
-        alt="carrito de compras"
-        title="Carrito de compras"
-      />
-      <span id="contador-carrito">0</span>
-    </a>
-  </nav>
-</header>
-    <main>
-      <section id="productos-contenedor"><section/>
-    </main>
+        <a href="./html/cart.html">
+          <img
+            class="img-carrito"
+            src="./img/usuariocarrito/carrito.png"
+            alt="carrito de compras"
+            title="Carrito de compras"
+          />
+          <span id="contador-carrito">0</span>
+        </a>
+      </nav>
+    </header>
+    <div class="menu-productos">
+      <h4 id="toggle-productos">☰ CATALOGO DE PERFUMES</h4>
+      <main>
+        <section id="productos-contenedor"></section>
+      </main>
+    </div>
     <footer>
       <p>&copy; 2025 Tienda de Perfumes. Todos los derechos reservados.</p>
-      <p> Web creada por Diego Ferreyra</p>
+      <p>Web creada por Diego Ferreyra</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/perfumes.js"></script>
