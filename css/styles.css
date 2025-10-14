@@ -85,7 +85,6 @@ footer a {
   justify-content: center;
   align-items: center;
   margin-bottom: 8px;
-  position: relative; /* clave para controlar el z-index */
 }
 
 .carrusel-track {
@@ -101,8 +100,65 @@ footer a {
   flex-shrink: 0;
 }
 
-/* Footer queda detrás del carrusel */
-/* footer {
-  position: relative;
-  z-index: 1;
-} */
+/* Tablets */
+@media (max-width: 768px) {
+  header nav {
+    margin: 0 20px;
+    flex-direction: column;
+    gap: 10px;
+    height: auto;
+  }
+
+  .img-carrito,
+  .carrito {
+    width: 35px;
+    height: 35px;
+  }
+
+  #contador-carrito {
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+  }
+
+  .carrusel {
+    width: 80%;
+    margin: 20px auto;
+  }
+
+  .carrusel img {
+    width: 90px;
+    height: 60px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+  header {
+    font-size: medium;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  header nav {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .img-carrito,
+  .carrito {
+    width: 30px;
+    height: 30px;
+  }
+
+  .carrusel {
+    width: 95%;
+    margin: 15px auto;
+  }
+
+  .carrusel img {
+    width: 70px;
+    height: 50px;
+  }
+}

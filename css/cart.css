@@ -46,3 +46,47 @@
 .atras {
   color: black;
 }
+
+/* Tablets */
+@media (max-width: 768px) {
+  #contenedor-carrito {
+    max-width: 90%;
+    padding: 10px;
+  }
+
+  .tarjeta-producto {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .tarjeta-producto img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .tarjeta-producto h3 {
+    width: auto;
+  }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+  #contenedor-carrito {
+    padding: 5px;
+  }
+
+  .tarjeta-producto {
+    gap: 10px;
+  }
+
+  .tarjeta-producto img {
+    width: 80px;
+    height: 80px;
+  }
+
+  #total {
+    font-size: 14px;
+  }
+}

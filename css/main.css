@@ -93,3 +93,52 @@
 .tarjeta-producto button:hover {
   background-color: plum;
 }
+
+/* Tablets */
+@media (max-width: 768px) {
+  #toggle-productos {
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  #productos-contenedor {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .tarjeta-producto {
+    width: 45%;
+  }
+
+  .tarjeta-producto img {
+    height: 180px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+  #toggle-productos {
+    font-size: 16px;
+    padding: 8px;
+    text-align: center;
+  }
+
+  #productos-contenedor {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .tarjeta-producto {
+    width: 90%;
+  }
+
+  .tarjeta-producto img {
+    height: 160px;
+  }
+
+  .tarjeta-producto button {
+    font-size: medium;
+    padding: 4px 8px;
+  }
+}
