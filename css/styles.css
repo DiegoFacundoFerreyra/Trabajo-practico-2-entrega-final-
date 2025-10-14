@@ -81,11 +81,11 @@ footer a {
   width: 40%;
   margin: 40px auto;
   overflow: hidden;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1; /* asegura que quede por debajo del menú y sobre footer */
+  margin-bottom: 8px;
+  position: relative; /* clave para controlar el z-index */
 }
 
 .carrusel-track {
@@ -101,12 +101,8 @@ footer a {
   flex-shrink: 0;
 }
 
-/* Evita que el footer o menú lo tapen */
-footer {
+/* Footer queda detrás del carrusel */
+/* footer {
   position: relative;
-  z-index: 0;
-}
-
-.menu-activo + .carrusel {
-  z-index: 0;
-}
+  z-index: 1;
+} */
