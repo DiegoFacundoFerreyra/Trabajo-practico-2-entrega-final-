@@ -60,3 +60,95 @@ document.addEventListener("DOMContentLoaded", () => {
   //Bucar en tiempo real
   inputBuscar.addEventListener("input", filtrarProductos);
 });
+
+/* //CARRUSEL
+const carrusel = document.querySelector(".carrusel");
+
+// Lista de imágenes que están en img/marcas
+const imagenes = [
+  "calvin.png",
+  "carolina.png",
+  "chanel.png",
+  "d&g.png",
+  "dior.png",
+  "giorgio.png",
+  "givenchy.png",
+  "paco.png",
+];
+
+//Crear contenedor interno (track)
+const track = document.createElement("div");
+track.classList.add("carrusel-track");
+
+//Agregar imagenes al track
+imagenes.forEach((img) => {
+  const imagen = document.createElement("img");
+  imagen.src = `./img/marcas/${img}`;
+  imagen.alt = img;
+  track.appendChild(imagen);
+});
+
+imagenes.forEach((img) => {
+  const imagen = document.createElement("img");
+  imagen.src = `./img/marcas/${img}`;
+  imagen.alt = img;
+  track.appendChild(imagen);
+});
+
+imagenes.forEach((img) => {
+  const imagen = document.createElement("img");
+  imagen.src = `./img/marcas/${img}`;
+  imagen.alt = img;
+  track.appendChild(imagen);
+});
+
+carrusel.appendChild(track); */
+
+//CARRUSEL
+const carrusel = document.querySelector(".carrusel");
+
+// Lista de imágenes que están en img/marcas
+const imagenes = [
+  "calvin.png",
+  "carolina.png",
+  "chanel.png",
+  "d&g.png",
+  "dior.png",
+  "giorgio.png",
+  "givenchy.png",
+  "paco.png",
+];
+// Crear el track
+const track = document.createElement("div");
+track.classList.add("carrusel-track");
+
+// Duplicar imágenes una vez para lograr efecto loop
+const listaCompleta = [...imagenes, ...imagenes];
+
+listaCompleta.forEach((img) => {
+  const imagen = document.createElement("img");
+  imagen.src = `./img/marcas/${img}`;
+  imagen.alt = img;
+  track.appendChild(imagen);
+});
+
+carrusel.appendChild(track);
+
+// Animación infinita con JS
+let posicion = 0;
+const velocidad = 0.5; // Ajuste de velocidad
+
+function animarCarrusel() {
+  posicion -= velocidad;
+  const anchoTotal = track.scrollWidth / 2;
+
+  // Si se llega al final de la primera tanda de imágenes, vuelve al inicio
+  if (Math.abs(posicion) >= anchoTotal) {
+    posicion = 0;
+  }
+
+  track.style.transform = `translateX(${posicion}px)`;
+  requestAnimationFrame(animarCarrusel);
+}
+
+animarCarrusel();

@@ -76,3 +76,37 @@ footer {
 footer a {
   text-decoration: underline;
 }
+
+.carrusel {
+  width: 40%;
+  margin: 40px auto;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1; /* asegura que quede por debajo del menú y sobre footer */
+}
+
+.carrusel-track {
+  display: flex;
+  gap: 20px;
+  will-change: transform;
+}
+
+.carrusel img {
+  width: 120px;
+  height: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Evita que el footer o menú lo tapen */
+footer {
+  position: relative;
+  z-index: 0;
+}
+
+.menu-activo + .carrusel {
+  z-index: 0;
+}

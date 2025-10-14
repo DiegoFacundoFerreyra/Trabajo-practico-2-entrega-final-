@@ -1,5 +1,7 @@
 /* Contenedor del menú hamburguesa */
 .menu-productos {
+  position: relative;
+  z-index: 10;
   margin: 0 auto;
   max-width: 1200px;
 }
@@ -57,7 +59,14 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: transform 0.2s;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.tarjeta-producto:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.6);
+  z-index: 10; /* asegura que quede arriba de otras tarjetas */
 }
 
 /* Imagen del perfume */
