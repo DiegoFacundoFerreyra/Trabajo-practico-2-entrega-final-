@@ -1,5 +1,5 @@
 // Ruta relativa al archivo JSON
-const urlJSON = "./js/main.json";
+const urlJSON = "./perfumes.json";
 
 fetch(urlJSON)
   .then((response) => {
@@ -9,16 +9,13 @@ fetch(urlJSON)
     return response.json();
   })
   .then((data) => {
-    console.log("Perfumes cargados:", data);
-
-    // Aquí podés usar los datos como si fueran tu array original
-    data.forEach((perfume) => {
-      console.log(`${perfume.nombre} - $${perfume.precio}`);
-    });
-
-    // Si querés guardarlo en una variable global:
-    window.perfumes = data;
+    // Si la función para renderizar tarjetas ya está creada en main.js
+    if (typeof renderizarTarjetas === "function") {
+      renderizarTarjetas(data);
+    } else {
+      console.warn(" La función renderizarTarjetas no está definida.");
+    }
   })
   .catch((error) => {
-    console.error("Hubo un problema con el fetch:", error);
+    console.error(" Hubo un problema con el fetch:", error);
   });
