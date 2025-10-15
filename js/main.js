@@ -61,49 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
   inputBuscar.addEventListener("input", filtrarProductos);
 });
 
-/* //CARRUSEL
-const carrusel = document.querySelector(".carrusel");
-
-// Lista de imágenes que están en img/marcas
-const imagenes = [
-  "calvin.png",
-  "carolina.png",
-  "chanel.png",
-  "d&g.png",
-  "dior.png",
-  "giorgio.png",
-  "givenchy.png",
-  "paco.png",
-];
-
-//Crear contenedor interno (track)
-const track = document.createElement("div");
-track.classList.add("carrusel-track");
-
-//Agregar imagenes al track
-imagenes.forEach((img) => {
-  const imagen = document.createElement("img");
-  imagen.src = `./img/marcas/${img}`;
-  imagen.alt = img;
-  track.appendChild(imagen);
-});
-
-imagenes.forEach((img) => {
-  const imagen = document.createElement("img");
-  imagen.src = `./img/marcas/${img}`;
-  imagen.alt = img;
-  track.appendChild(imagen);
-});
-
-imagenes.forEach((img) => {
-  const imagen = document.createElement("img");
-  imagen.src = `./img/marcas/${img}`;
-  imagen.alt = img;
-  track.appendChild(imagen);
-});
-
-carrusel.appendChild(track); */
-
 //CARRUSEL
 const carrusel = document.querySelector(".carrusel");
 
